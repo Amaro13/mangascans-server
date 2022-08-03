@@ -1,0 +1,38 @@
+1) Install the yarn globally with npm install --global yarn
+
+2) Created the server with yarn create react-app mangascans-server --template typescript
+
+3) Installed all the dependencies:
+    //yarn add typescript @types/node @types/react @types/react-dom @types/jest
+    //yarn add styled-components
+    //yarn add @types/styled-components
+    //yarn add react-router-dom
+    //yarn add @tanstack/react-query
+    //yarn add luxon
+    //yarn add -D @types/luxon
+
+4) In the tsconfig.json add the following line so every import takes the src as the initial folder. Add the line as the first item of compilerOptions.
+    // "baseUrl": "./src",
+5) Create the assets folder and begin including the imgs, and styles folders
+    // In the imgs create the folders that will contain the images to be used
+    // in the styles folder, create the colors.ts, constants.ts, mixins.ts and theme.ts
+        // colors.ts -> defines the basic colors definitions for the project
+        // constants.ts -> defines the basic font sizes and types for the project
+        // mixins.ts -> imports colors.ts and constants.ts and defines an array of facilitating items / objects formats (example: buttons, logo, heading, selects)
+        // theme.ts -> imports all the others and defines the theme object with them, them export them.
+6) Create the folder types in the src folder
+    // Create the styled-components.d.ts in the folder
+        // import the theme from the theme.ts, create the type Theme with the typeof theme and then declare the module styled-components extending and exporting it like so:
+            import theme from "assets/styles/theme";
+
+            type Theme = typeof theme;
+
+            declare module "styled-components" {
+            export interface DefaultTheme extends Theme {}
+            }
+
+7) Create the router.tsx in the src folder to serve as the routes file
+
+* to import the webp image in react.typescript use:
+    import img from "./images/image.webp";
+    <img src={img} />
