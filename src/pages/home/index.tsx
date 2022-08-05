@@ -2,7 +2,7 @@
 // import axios from "axios";
 import * as S from "./style"; //importing all const exports from style contained within as S
 import { ReactComponent as Search } from "assets/imgs/icons/search.svg";
-import { header } from "components/header/style";
+import Header from "../../components/header";
 
 const Home = () => {
   //   const [mangas, setMangas] = useState([]);
@@ -20,20 +20,7 @@ const Home = () => {
   return (
     <S.home>
       <S.HomeContent>
-        <header>
-          <S.HomeHeaderDetails>
-            <div>
-              <S.HomeHeaderDetailsLogo>MangaScans</S.HomeHeaderDetailsLogo>
-              <S.HomeHeaderDetailsDate>
-                Put the date here
-              </S.HomeHeaderDetailsDate>
-            </div>
-            <S.HomeHeaderDetailsSearch>
-              <Search />
-              <input type="text" placeholder="Look for the flavor" />
-            </S.HomeHeaderDetailsSearch>
-          </S.HomeHeaderDetails>
-        </header>
+        <Header path="home" />
         <div>
           <S.HomeProductTitle>
             <b>Mangas</b>
@@ -43,9 +30,6 @@ const Home = () => {
           </S.HomeProductList>
         </div>
       </S.HomeContent>
-      <aside>
-        <p>Requests here</p>
-      </aside>
     </S.home>
   );
 };
