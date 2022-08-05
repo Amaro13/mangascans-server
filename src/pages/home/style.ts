@@ -13,8 +13,8 @@ export const home = styled.section`
 
 export const HomeContent = styled.main`
   ${() => css`
-    width: calc(100% - 450px);
-    padding: 20px;
+    width: 100%;
+    /* padding: 20px; */
     overflow: auto;
     height: 100vh;
     box-sizing: border-box;
